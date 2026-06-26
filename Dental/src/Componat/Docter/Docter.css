@@ -1,0 +1,255 @@
+.docter-section {
+  padding: 100px 0;
+  background-color: var(--white);
+}
+
+.docter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+}
+
+.header-left {
+  max-width: 600px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 1rem 0;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.docter-slider-container {
+  overflow: hidden;
+  margin: 0 -1rem; /* Adjust for wrapper padding */
+}
+
+.docter-slider-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.docter-card-wrapper {
+  flex: 0 0 33.333%;
+  padding: 1rem;
+}
+
+.docter-slider-container.view-all .docter-slider-track {
+  gap: 0;
+}
+
+.docter-slider-container.view-all .docter-card-wrapper {
+  margin-bottom: 1rem;
+}
+
+.docter-card {
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid #f3f4f6;
+  background: var(--white);
+  height: 100%;
+  border-radius: 24px;
+  animation: revealUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.docter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.docter-image-area {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+
+.docter-card:hover .doctor-img {
+  transform: scale(1.1);
+}
+
+/* Slider Controls */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slider-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  background: var(--white);
+}
+
+.slider-arrow:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.desktop-only {
+  margin-left: 1rem;
+}
+
+/* Card Info & Actions */
+.specialty-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--text-dark, #111827);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.docter-info {
+  padding: 24px;
+}
+
+.docter-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark, #111827);
+  margin-bottom: 4px;
+}
+
+.docter-title {
+  color: var(--primary, #0d9488);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.docter-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.docter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 20px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+.social-icon:hover {
+  background-color: var(--primary, #0d9488);
+  color: var(--white, white);
+  transform: translateY(-2px);
+}
+
+.phone-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e0f2fe;
+  color: #0284c7;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.phone-btn:hover {
+  background-color: #0284c7;
+  color: var(--white, white);
+}
+
+.btn-primary.sm {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .docter-section { padding: 80px 0; }
+  .docter-card-wrapper {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .docter-section { padding: 50px 0; }
+  .docter-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .docter-card-wrapper {
+    flex: 0 0 100%;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
